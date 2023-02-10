@@ -1,0 +1,38 @@
+.film-category {
+    background-color: white;
+    padding: 80px;
+}
+
+.best-film p {
+    padding: 10px 5px;
+    margin-bottom: 30px;
+    color: #dbdbdb;
+}
+
+.best-film {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    align-items: flex-start;
+    margin: auto;
+}
+
+.best-film h1 {
+    margin-bottom: 15px;
+}
+
+.best-rated-films {
+    background-color: #e9c434;
+}
+
+.adventure-films {
+    background-color: #24b4be;
+}
+
+.comedy-films {
+    background-color: #dbdbdb;
+}
+
+.fantasy-films {
+    background-color: tomato;
+}

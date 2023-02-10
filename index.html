@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" >
+    <title>Accueil - JustStreamIt</title>
+    <link href="static/style/style.css" rel="stylesheet" >
+    <link href="static/style/index.css" rel="stylesheet" >
+    <link href="static/style/modal.css" rel="stylesheet" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="images/logo_black_reduced.png" alt="Logo JustStreamIt" >
+            <div>
+                <a href="index.html">Accueil</a>
+                <a href="#category">Catégories</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="best-film">
+            <div>
+                <h1 id="bestFilmTitle">Movie Title</h1>
+                <button type="button">Play</button>
+                <button id="openModalButton" type="button">Plus d'info</button>
+                <p>Résumé du film</p>
+            </div>
+        </section>
+        <section class="best-rated-films film-category">
+            <h2>Films les mieux notés</h2>
+            <div class="carousel">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </section>
+        <section class="adventure-films film-category">
+            <h2>Aventure</h2>
+            <div class="carousel">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </section>
+        <section class="comedy-films film-category">
+            <h2>Comédie</h2>
+            <div class="carousel">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </section>
+        <section class="fantasy-films film-category">
+            <h2>Fantasy</h2>
+            <div class="carousel">
+                <a class="carousel-button_prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&#169; 2023 JustStreamIt</p>
+    </footer>
+    <!-- Modal -->
+    <div id="filmModal" class="modal">
+        <!-- Modal content -->
+        <div class="film-modal-content">
+            <div class="modal-header">
+                <div class="modal-header-left">
+                    <img alt="Image de la pochette du film" class="modal-cover-image" id="modalCover" src="images/placeholders/movie_cover-placeholder.png">
+                </div>
+                <div class="modal-header-right">
+                    <span class="close">&times;</span>
+                    <h2>Titre du film</h2>
+                    <p id="modalGenre">Genre</p>
+                    <p id="modalDate">Date de sortie</p>
+                    <p id="modalDuration">Durée</p>
+                    <p id="modalRated">Rated</p>
+                    <strong>IMDb : </strong>
+                    <p id="modalImdb"></p><br>
+                    <button class="modal-button" type="button">Play</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <strong>Réalisateur : </strong>
+                <p id="modalDirector"></p>
+                <strong>Liste des acteurs : </strong>
+                <p id="modalCast"></p>
+                <strong>Pays d'origine : </strong>
+                <p id="modalCountry"></p>
+                <strong>Box Office : </strong>
+                <p id="modalBoxOffice"></p>
+                <strong>Résumé : </strong>
+                <p id="modalSynopsis"></p>
+            </div> 
+        </div>
+    </div>
+
+    <script src="static/js/best_film.js"></script>
+    <script src="static/js/modal.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+
+</html> 
