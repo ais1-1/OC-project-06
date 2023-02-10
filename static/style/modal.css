@@ -24,6 +24,11 @@
     width: 80%; /* Could be more or less, depending on screen size */
   }
   
+
+  .film-modal-content p {
+    display: inline;
+  }
+
   /* The Close Button */
   .close {
     color: #aaa;
@@ -58,6 +63,7 @@
   flex: 25%;
 }
 .modal-header-right {
+  font-weight: bold;
   flex: 75%;
 }
 

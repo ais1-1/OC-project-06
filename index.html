@@ -24,11 +24,14 @@
     </header>
     <main>
         <section class="best-film">
-            <div>
+            <div class="best-film-info">
                 <h1 id="bestFilmTitle">Movie Title</h1>
                 <button type="button">Play</button>
                 <button id="openModalButton" type="button">Plus d'info</button>
-                <p>Résumé du film</p>
+                <p id="bestFilmSynopsis">Résumé du film</p>
+            </div>
+            <div class="best-film-cover">
+                <img id="bestFilmCover" alt="Image de la pochette du film" src="images/placeholders/movie_cover-placeholder.jpg">
             </div>
         </section>
         <section class="best-rated-films film-category">
@@ -69,31 +72,30 @@
         <div class="film-modal-content">
             <div class="modal-header">
                 <div class="modal-header-left">
-                    <img alt="Image de la pochette du film" class="modal-cover-image" id="modalCover" src="images/placeholders/movie_cover-placeholder.png">
+                    <img alt="Image de la pochette du film" class="modal-cover-image" id="modalCover" src="images/placeholders/movie_cover-placeholder.jpg">
                 </div>
                 <div class="modal-header-right">
                     <span class="close">&times;</span>
-                    <h2>Titre du film</h2>
-                    <p id="modalGenre">Genre</p>
-                    <p id="modalDate">Date de sortie</p>
-                    <p id="modalDuration">Durée</p>
-                    <p id="modalRated">Rated</p>
-                    <strong>IMDb : </strong>
-                    <p id="modalImdb"></p><br>
+                    <h2 id="modalFilmTitle">Titre du film</h2>
+                    <p id="modalGenre">Genre</p><br>
+                    <p id="modalDate">Date de sortie</p><br>
+                    <p id="modalDuration">Durée</p><br>
+                    <p id="modalRated">Rated</p><br>
+                    <p>IMDb : </p><p id="modalImdb"></p><br><br>
                     <button class="modal-button" type="button">Play</button>
                 </div>
             </div>
             <div class="modal-body">
                 <strong>Réalisateur : </strong>
-                <p id="modalDirector"></p>
+                <p id="modalDirector"></p><br>
                 <strong>Liste des acteurs : </strong>
-                <p id="modalCast"></p>
+                <p id="modalCast"></p><br>
                 <strong>Pays d'origine : </strong>
-                <p id="modalCountry"></p>
+                <p id="modalCountry"></p><br>
                 <strong>Box Office : </strong>
-                <p id="modalBoxOffice"></p>
+                <p id="modalBoxOffice"></p><br>
                 <strong>Résumé : </strong>
-                <p id="modalSynopsis"></p>
+                <p id="modalSynopsis"></p><br>
             </div> 
         </div>
     </div>

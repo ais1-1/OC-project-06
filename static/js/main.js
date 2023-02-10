@@ -4,4 +4,6 @@ const baseUrl = "http://localhost:8000/api/v1/titles/"
 var btn = document.getElementById("openModalButton");
 
 /* When the user clicks on the button, open the modal */
-btn.setAttribute("onClick", 'openModal("9")')
+/* btn.setAttribute("onClick", 'openModal("9")') */
+
+fetchBestFilm()
