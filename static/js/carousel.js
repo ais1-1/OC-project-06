@@ -6,7 +6,7 @@ async function fetchInfo(url) {
 }
 
 
-async function fetchPaginatedCarouselInfo(baseUrl, categoryName, numberOfFilms=7) {
+async function fetchPaginatedCarouselInfo(categoryName, numberOfFilms=7) {
     
     const imdbSortEndpoint = "?sort_by=-imdb_score";
     const genreEndpoint = "&genre=";
@@ -17,12 +17,14 @@ async function fetchPaginatedCarouselInfo(baseUrl, categoryName, numberOfFilms=7
         let fetchedFilmData = new Array;
         let pageEndpoint = "&page=" + pageNumber.toString();
         let url =  baseUrl + imdbSortEndpoint + pageEndpoint + genreEndpoint + categoryName;
-        console.log(url);
+
         fetchedFilmData = await fetchInfo(url);
         filmData.push.apply(filmData, fetchedFilmData);
-        console.log(filmData.length, " filmData: ",fetchedFilmData, " final : ", filmData );
         pageNumber++;
 
+    }
+    if (categoryName === "") {
+        filmData.shift();
     }
 
     filmData = filmData.slice(0, numberOfFilms);
@@ -38,12 +40,26 @@ async function fetchPaginatedCarouselInfo(baseUrl, categoryName, numberOfFilms=7
     
 }
 
-async function buildCarousel(baseUrl, categoryName, className, numberOfFilms=7) {
+async function buildCarousel(categoryName, className, numberOfFilms=7) {
+    let carouselSection = document.querySelector(`.${className}`);
 
-    const filmData = fetchPaginatedCarouselInfo(baseUrl, categoryName);
+    const filmData = fetchPaginatedCarouselInfo(categoryName);
 
-    (await filmData).forEach((film) => {
-        console.log(film["id"])
+    (await filmData).forEach((film, i) => {
+        let carousel = carouselSection.querySelector(".carousel-container");
+
+        let filmBox = carousel.querySelector(".film-box");
+        filmBox.setAttribute("id", `${categoryName}${i}`);
+        carousel.appendChild(filmBox);
+
+        let filmCover = document.createElement('img');
+        filmCover.setAttribute("alt", film.title);
+        filmCover.src = film.image_url;
+        filmBox.appendChild(filmCover);
+
+
+        let filmId = film.id;
+        filmCover.setAttribute("onClick", `openModal("${filmId}")`);
     });
 
 }

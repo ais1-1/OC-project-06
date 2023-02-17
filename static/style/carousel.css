@@ -1,0 +1,28 @@
+.film-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.carousel-btn_prev,
+.carousel-btn_next {
+    padding: 100px 0px;
+    position: relative;
+    font-size: 3em;
+    text-align: center;
+    background-color: transparent;
+    color: #121734;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.carousel-btn_prev {
+    float: left;
+    padding-right: 30px;
+}
+
+.carousel-btn_next {
+    float: right;
+    padding-left: 30px;
+}
