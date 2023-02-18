@@ -45,15 +45,15 @@ async function buildCarousel(categoryName, className, numberOfFilms=7) {
 
     const filmData = fetchPaginatedCarouselInfo(categoryName);
 
-    (await filmData).forEach((film, i) => {
-        let carousel = carouselSection.querySelector(".carousel-container");
+    let carousel = carouselSection.querySelector(".carousel-container");
 
-        let filmBox = carousel.querySelector(".film-box");
-        filmBox.setAttribute("id", `${categoryName}${i}`);
-        carousel.appendChild(filmBox);
+    let filmBox = carousel.querySelector(".film-box");
+
+    (await filmData).forEach((film, i) => {
 
         let filmCover = document.createElement('img');
         filmCover.setAttribute("alt", film.title);
+        filmCover.setAttribute("id", `${categoryName}${i}`);
         filmCover.src = film.image_url;
         filmBox.appendChild(filmCover);
 
@@ -64,3 +64,12 @@ async function buildCarousel(categoryName, className, numberOfFilms=7) {
 
 }
 
+
+
+window.plusSlides = function(element, shift) {
+    let parent = element.parentNode;
+    let carouselElement = parent.parentNode.querySelectorAll("div")[1];
+    let scrollWidth = carouselElement.getBoundingClientRect().width;
+
+    carouselElement.scrollBy({left: shift * scrollWidth, behavior: 'smooth'});
+}

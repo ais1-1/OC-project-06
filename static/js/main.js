@@ -12,5 +12,3 @@ window.addEventListener('load', () => {
     
     fetchBestFilm();
 })
-/* var url = baseUrl + imdbSortEndpoint + pageEndpoint + genreEndpoint
-buildCarousel(baseUrl, "adventure", "best-rated-films") */

@@ -18,10 +18,10 @@
   /* Modal Content/Box */
   .film-modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
   }
   
 
@@ -47,7 +47,7 @@
   /* Modal Header */
 .modal-header {
     display: flex;
-    padding: 2px 16px;
+    padding: 24px;
     background-color: crimson;
     color: white;
   }
