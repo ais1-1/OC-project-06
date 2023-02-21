@@ -1,3 +1,4 @@
+/* Fetch info of the best film and fill the index page fields. */
 function bestFilmInfo(id) {
     let bestFilmTitle = document.getElementById("bestFilmTitle");
     let bestFilmCover = document.getElementById("bestFilmCover");
@@ -14,6 +15,7 @@ function bestFilmInfo(id) {
 }
 
 
+/* Fetch the best film id and set the modal button. */
 function fetchBestFilm() {
     let filmId = 0;
     let btn = document.getElementById("openModalButton");
