@@ -38,8 +38,9 @@ async function fetchPaginatedCarouselInfo(categoryName, numberOfFilms = 7) {
 
 /* Build carousels. */
 async function buildCarousel(categoryName, className, numberOfFilms = 7) {
-    let carouselSection = document.querySelector(`.${className}`);
     const filmData = fetchPaginatedCarouselInfo(categoryName);
+
+    let carouselSection = document.querySelector(`.${className}`);
     let carousel = carouselSection.querySelector(".carousel-container");
     let filmBox = carousel.querySelector(".film-box");
 
